@@ -1,0 +1,36 @@
+swagger: "2.0"
+info:
+  title: ""
+  version: ""
+basePath: /
+paths:
+  /:
+    get:
+      operationId: Root
+      responses:
+        "200":
+          description: ""
+  /sayhello/{userid}:
+    get:
+      operationId: Sayhello
+      responses:
+        "200":
+          description: ""
+  /sayhello1/{userid}:
+    get:
+      operationId: Sayhello1
+      responses:
+        "200":
+          description: ""
+  /sayhi:
+    post:
+      operationId: Sayhi
+      responses:
+        "200":
+          description: ""
+  /sayjson:
+    post:
+      operationId: SayJSON
+      responses:
+        "200":
+          description: ""
