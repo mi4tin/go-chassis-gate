@@ -5,8 +5,8 @@ import (
 	"github.com/go-chassis/go-chassis/core/lager"
 	"github.com/go-chassis/go-chassis/core/server"
 
-	_ "github.com/mi4tin/chassis-gate/gate"
-	"github.com/mi4tin/chassis-gate/examples/schemas"
+	_ "github.com/mi4tin/go-chassis-gate/gate"
+	"github.com/mi4tin/go-chassis-gate/examples/schemas"
 )
 
 //if you use go run main.go instead of binary run, plz export CHASSIS_HOME=/{path}/{to}/rest/server/

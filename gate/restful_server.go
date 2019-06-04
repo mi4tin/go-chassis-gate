@@ -110,7 +110,6 @@ func (r *restfulServer) Register(schema interface{}, options ...server.RegisterO
 		return "", err
 	}
 	configObj:=GetConfig()
-	fmt.Println("configObj:",configObj)
 
 	schemaType := reflect.TypeOf(schema)
 	schemaValue := reflect.ValueOf(schema)
@@ -128,8 +127,6 @@ func (r *restfulServer) Register(schema interface{}, options ...server.RegisterO
 			return "", fmt.Errorf("router func can not find: %s", route.ResourceFuncName)
 		}
 
-		//ip限制
-		fmt.Println("handler0:",route.IsCheckIp)
 		isCheckIp:=route.IsCheckIp
 		handler := func(req *restful.Request, rep *restful.Response) {
 			c, err := handler.GetChain(common.Provider, r.opts.ChainName)//放在此处是为了实现api级~~

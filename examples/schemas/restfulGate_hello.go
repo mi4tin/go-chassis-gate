@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"fmt"
-	rf "github.com/mi4tin/chassis-gate/gate"
+	rf "github.com/mi4tin/go-chassis-gate/gate"
 	"math/rand"
 )
 
@@ -66,6 +66,16 @@ func (r *RestGateFulHello) SayJSON(b *rf.Context) {
 	return
 }
 
+func (r *RestGateFulHello) Circuit(b *rf.Context) {
+	callError()
+	reslut := struct {
+		Msg string
+	}{}
+	reslut.Msg="ok"
+	b.WriteJSON(reslut, "application/json")
+	return
+}
+
 //URLPatterns helps to respond for corresponding API calls
 func (r *RestGateFulHello) URLPatterns() []rf.Route {
 	return []rf.Route{
@@ -81,6 +91,9 @@ func (r *RestGateFulHello) URLPatterns() []rf.Route {
 			Returns: []*rf.Returns{{Code: 200}}},
 
 		{Method: http.MethodPost, Path: "/sayjson", ResourceFuncName: "SayJSON",
+			Returns: []*rf.Returns{{Code: 200}}},
+
+		{Method: http.MethodGet, Path: "/circuit", ResourceFuncName: "Circuit",
 			Returns: []*rf.Returns{{Code: 200}}},
 	}
 }
