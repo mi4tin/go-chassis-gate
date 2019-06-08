@@ -4,39 +4,15 @@ info:
   version: ""
 basePath: /
 paths:
-  /:
-    get:
-      operationId: Root
-      responses:
-        "200":
-          description: ""
   /circuit:
     get:
       operationId: Circuit
       responses:
         "200":
           description: ""
-  /sayhello/{userid}:
+  /circuit1:
     get:
-      operationId: Sayhello
-      responses:
-        "200":
-          description: ""
-  /sayhello1/{userid}:
-    get:
-      operationId: Sayhello1
-      responses:
-        "200":
-          description: ""
-  /sayhi:
-    post:
-      operationId: Sayhi
-      responses:
-        "200":
-          description: ""
-  /sayjson:
-    post:
-      operationId: SayJSON
+      operationId: Circuit1
       responses:
         "200":
           description: ""
