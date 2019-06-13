@@ -1,6 +1,6 @@
 package gate
 
-import "github.com/go-chassis/go-chassis/gate/fileHelper"
+import "github.com/mi4tin/go-chassis-gate/fileHelper"
 
 var configObj *Config
 

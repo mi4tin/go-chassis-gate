@@ -1,4 +1,4 @@
----
+#目前熔断只支持Consumer
 cse:
   isolation:
     Consumer:

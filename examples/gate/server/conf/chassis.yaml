@@ -2,7 +2,7 @@
 cse:
   service:
     registry:
-      address: "http://127.0.0.1:30100,http://127.0.0.1:30101" # 多个sc用逗号分割，If type is File then address will be the path of the file
+      address: http://127.0.0.1:30100,http://127.0.0.1:30101 # 多个sc用逗号分割，If type is File then address will be the path of the file
   protocols:
     gate:
       listenAddress: "10.254.0.239:7001"
@@ -11,7 +11,7 @@ cse:
       Provider:
         default: tracing-provider,bizkeeper-provider
       Consumer:
-        default: bizkeeper-consumer,loadbalance,transport
+        default: bizkeeper-consumer,loadbalance,transport #1、熔断transport必须
   transport:
     failure:
       rest: http_500,http_502
