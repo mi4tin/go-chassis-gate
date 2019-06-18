@@ -9,24 +9,26 @@ import (
 	"fmt"
 )
 
-func callError() {
+func callError()  string{
 	fmt.Println("callError")
 	req, err := rest.NewRequest("GET", "http://CircuitServer/error", nil)
 	if err != nil {
 		openlogging.GetLogger().Error("new request failed.")
-		return
+		return err.Error()
 	}
 	resp, err := core.NewRestInvoker().ContextDo(context.TODO(), req)
 	if resp != nil {
 		if resp.Body != nil {
-			openlogging.GetLogger().Info("response body: " + string(httputil.ReadBody(resp)))
-			defer resp.Body.Close()
+			//openlogging.GetLogger().Info("response body: " + string(httputil.ReadBody(resp)))
+			//defer resp.Body.Close()
 		}
 	}
 
 	if err != nil {
 		openlogging.GetLogger().Error("request failed: " + err.Error())
-		return
+		return err.Error()
 	}
+	return string(httputil.ReadBody(resp))
+
 }
 

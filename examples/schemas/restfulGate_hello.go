@@ -20,11 +20,11 @@ type RestGateFulHello struct {
 }
 
 func (r *RestGateFulHello) Circuit(b *rf.Context) {
-	callError()
+	respStr:= callError()
 	reslut := struct {
 		Msg string
 	}{}
-	reslut.Msg="ok"
+	reslut.Msg=respStr
 	b.WriteJSON(reslut, "application/json")
 	return
 }
