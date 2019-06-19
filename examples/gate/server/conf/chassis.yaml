@@ -11,7 +11,7 @@ cse:
       Provider:
         default: tracing-provider,bizkeeper-provider
       Consumer:
-        default: bizkeeper-consumer,loadbalance,transport #1、熔断transport必须
+        default: loadbalance,bizkeeper-consumer,transport #1、熔断transport必须
   transport:
     failure:
       rest: http_500,http_502
