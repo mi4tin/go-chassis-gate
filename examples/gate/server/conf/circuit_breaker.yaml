@@ -5,6 +5,7 @@ cse:
       timeoutInMilliseconds: 1000
       maxConcurrentRequests: 3
   circuitBreaker:
+    scope: instance-api
     Consumer:
       CircuitServer:
         enabled: true
