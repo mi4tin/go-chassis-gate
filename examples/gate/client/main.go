@@ -21,9 +21,9 @@ func main() {
 		return
 	}
 
-	requestUrl:="http://RESTServer/sayhello/world"
+	requestUrl := "http://RESTServer/sayhello/world"
 
-	log.Print("requestUrl:",requestUrl)
+	log.Print("requestUrl:", requestUrl)
 
 	req, err := rest.NewRequest("GET", requestUrl, nil)
 	if err != nil {

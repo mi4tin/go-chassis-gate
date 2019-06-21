@@ -3,28 +3,27 @@ package schemas
 import (
 	"net/http"
 
-	rf "github.com/mi4tin/go-chassis-gate/gate"
-	"math/rand"
-	"github.com/go-mesh/openlogging"
+	"context"
 	"github.com/go-chassis/go-chassis/client/rest"
 	"github.com/go-chassis/go-chassis/core"
-	"context"
 	"github.com/go-chassis/go-chassis/pkg/util/httputil"
+	"github.com/go-mesh/openlogging"
+	rf "github.com/mi4tin/go-chassis-gate/gate"
+	"math/rand"
 )
 
 var num = rand.Intn(100)
 
 //RestGateFulHello is a struct used for implementation of restfull hello program
 type RestGateFulHello struct {
-
 }
 
 func (r *RestGateFulHello) Circuit(b *rf.Context) {
-	respStr:= callError()
+	respStr := callError()
 	reslut := struct {
 		Msg string
 	}{}
-	reslut.Msg=respStr
+	reslut.Msg = respStr
 	b.WriteJSON(reslut, "application/json")
 	return
 }
@@ -36,7 +35,6 @@ func (r *RestGateFulHello) Circuit1(b *rf.Context) {
 		return
 	}
 
-
 	//req.Header.Set("Chassis", "info")
 
 	resp, err := core.NewRestInvoker().ContextDo(context.Background(), req)
@@ -44,7 +42,7 @@ func (r *RestGateFulHello) Circuit1(b *rf.Context) {
 		openlogging.Error("do request failed.")
 		return
 	}
-	respByte:=httputil.ReadBody(resp)
+	respByte := httputil.ReadBody(resp)
 	openlogging.Info("carts Server return : " + string(respByte))
 	b.Write(respByte)
 
@@ -62,5 +60,3 @@ func (r *RestGateFulHello) URLPatterns() []rf.Route {
 			Returns: []*rf.Returns{{Code: 200}}},
 	}
 }
-
-

@@ -1,15 +1,15 @@
 package schemas
 
 import (
-	"github.com/go-mesh/openlogging"
+	"context"
+	"fmt"
 	"github.com/go-chassis/go-chassis/client/rest"
 	"github.com/go-chassis/go-chassis/core"
-	"context"
 	"github.com/go-chassis/go-chassis/pkg/util/httputil"
-	"fmt"
+	"github.com/go-mesh/openlogging"
 )
 
-func callError()  string{
+func callError() string {
 	fmt.Println("callError")
 	req, err := rest.NewRequest("GET", "http://CircuitServer/error", nil)
 	if err != nil {
@@ -31,4 +31,3 @@ func callError()  string{
 	return string(httputil.ReadBody(resp))
 
 }
-

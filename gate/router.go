@@ -22,7 +22,7 @@ type Route struct {
 	Read             interface{}   //Read tells what resource type will be read from the request payload. Optional.
 	Consumes         []string      //Consumes specifies that this WebService can consume one or more MIME types.
 	Produces         []string      //Produces specifies that this WebService can produce one or more MIME types.
-	IsCheckIp bool
+	IsCheckIp        bool
 }
 
 //Returns describe response doc
@@ -63,4 +63,3 @@ func GetRouteSpecs(schema interface{}) ([]Route, error) {
 	fmt.Println("server.gate")
 	return []Route{}, fmt.Errorf("<rest.RegisterResource> result of 'URLPatterns' function not []*Route type in servant struct `%s`", name)
 }
-

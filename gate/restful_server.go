@@ -42,7 +42,7 @@ const (
 )
 
 const (
-	Meta_IsCheckIp="IsCheckIp"
+	Meta_IsCheckIp = "IsCheckIp"
 )
 
 func init() {
@@ -109,7 +109,7 @@ func (r *restfulServer) Register(schema interface{}, options ...server.RegisterO
 	if err != nil {
 		return "", err
 	}
-	configObj:=GetConfig()
+	configObj := GetConfig()
 
 	schemaType := reflect.TypeOf(schema)
 	schemaValue := reflect.ValueOf(schema)
@@ -127,9 +127,9 @@ func (r *restfulServer) Register(schema interface{}, options ...server.RegisterO
 			return "", fmt.Errorf("router func can not find: %s", route.ResourceFuncName)
 		}
 
-		isCheckIp:=route.IsCheckIp
+		isCheckIp := route.IsCheckIp
 		handler := func(req *restful.Request, rep *restful.Response) {
-			c, err := handler.GetChain(common.Provider, r.opts.ChainName)//放在此处是为了实现api级~~
+			c, err := handler.GetChain(common.Provider, r.opts.ChainName) //放在此处是为了实现api级~~
 			if err != nil {
 				lager.Logger.Errorf("Handler chain init err [%s]", err.Error())
 				rep.AddHeader("Content-Type", "text/plain")
@@ -158,8 +158,8 @@ func (r *restfulServer) Register(schema interface{}, options ...server.RegisterO
 				ir.Status = bs.resp.StatusCode()
 
 				//验证ip
-				if isCheckIp{
-					fmt.Println("checkip:",configObj	)
+				if isCheckIp {
+					fmt.Println("checkip:", configObj)
 				}
 
 				method.Func.Call([]reflect.Value{schemaValue, reflect.ValueOf(bs)})
@@ -178,7 +178,7 @@ func (r *restfulServer) Register(schema interface{}, options ...server.RegisterO
 	return reflect.TypeOf(schema).String(), nil
 }
 func transfer(inv *invocation.Invocation, req *restful.Request) {
-	fmt.Println("Metadata:",inv.Metadata)
+	fmt.Println("Metadata:", inv.Metadata)
 	for k, v := range inv.Metadata {
 		req.SetAttribute(k, v.(string))
 	}
@@ -252,10 +252,10 @@ func (r *restfulServer) Start() error {
 	r.opts.Address = config.Address
 	r.mux.Unlock()
 	r.container.Add(r.ws)
-	r.container.Filter(func(request *restful.Request, response *restful.Response,fl *restful.FilterChain){
+	r.container.Filter(func(request *restful.Request, response *restful.Response, fl *restful.FilterChain) {
 		//ip验证
 		//fmt.Println(request.)
-		fmt.Println("SelectedRoutePath:",request.SelectedRoutePath())
+		fmt.Println("SelectedRoutePath:", request.SelectedRoutePath())
 		fl.ProcessFilter(request, response)
 	})
 	if r.opts.TLSConfig != nil {
