@@ -39,7 +39,7 @@ func (r *RestGateFulHello) Circuit1(b *rf.Context) {
 
 	resp, err := core.NewRestInvoker().ContextDo(context.Background(), req)
 	if err != nil {
-		openlogging.Error("do request failed.")
+		openlogging.Error("do request failed." + err.Error())
 		return
 	}
 	respByte := httputil.ReadBody(resp)

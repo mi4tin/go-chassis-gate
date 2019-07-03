@@ -1,0 +1,14 @@
+2019-07-03 15:06:56.025 +08:00 ERROR handler/transport_handler.go:52 Call got Error, err [http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data]
+2019-07-03 15:06:56.081 +08:00 ERROR schemas/bll.go:28 request failed: http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data
+2019-07-03 15:07:06.986 +08:00 ERROR handler/transport_handler.go:52 Call got Error, err [http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data]
+2019-07-03 15:07:06.989 +08:00 ERROR schemas/bll.go:28 request failed: http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data
+2019-07-03 15:07:07.414 +08:00 ERROR handler/transport_handler.go:52 Call got Error, err [http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data]
+2019-07-03 15:07:07.414 +08:00 ERROR schemas/bll.go:28 request failed: http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data
+2019-07-03 15:07:07.777 +08:00 ERROR handler/transport_handler.go:52 Call got Error, err [http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data]
+2019-07-03 15:07:07.778 +08:00 ERROR schemas/bll.go:28 request failed: http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data
+2019-07-03 15:07:08.272 +08:00 ERROR handler/transport_handler.go:52 Call got Error, err [http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data]
+2019-07-03 15:07:08.272 +08:00 ERROR schemas/bll.go:28 request failed: http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data
+2019-07-03 15:07:08.558 +08:00 ERROR handler/transport_handler.go:52 Call got Error, err [http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data]
+2019-07-03 15:07:08.558 +08:00 ERROR schemas/bll.go:28 request failed: http error status [500], server addr: [127.0.0.1:8081], will not print response body, to protect service sensitive data
+2019-07-03 15:07:08.894 +08:00 ERROR circuit/circuit.go:93 fallback for CircuitServer:rest:/error, error [circuit open]
+2019-07-03 15:07:08.894 +08:00 ERROR schemas/bll.go:28 request failed: API CircuitServer:rest:/error is isolated because of error: circuit open
