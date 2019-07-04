@@ -1,2 +1,3 @@
 /.idea
 /examples/gate/server/*.exe
+/examples/gate/server/conf/RESTGateServer_new/schema
