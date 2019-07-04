@@ -5,7 +5,6 @@ echo "mode: atomic" > coverage.txt
 # Make Necessary directories needed by Test (Ideally it should get created automatically but Travis is not allowing to create it using os.MkdriAll)
 # I know this is insane but nothing can be done
 
-rm -rf $GOPATH/src/github.com/go-chassis
 # For auth test
 mkdir -p $GOPATH/test/auth/conf
 mkdir -p $GOPATH/test/auth/cipher
