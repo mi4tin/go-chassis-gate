@@ -1,4 +1,4 @@
-package fileHelper
+package filehelper
 
 import (
 	"fmt"
@@ -9,10 +9,11 @@ import (
 )
 
 const (
-	FileName_Gate = "gate.yaml"
+	//FileNameGate gate配置文件名
+	FileNameGate = "gate.yaml"
 )
 
-//获取配置，configObj必须为指定类型的struct
+//GetConfig 获取配置，configObj必须为指定类型的struct
 func GetConfig(configObj interface{}, fileName string) error {
 	filePath := filepath.Join(fileutil.GetConfDir(), fileName)
 	data, err := ioutil.ReadFile(filePath)

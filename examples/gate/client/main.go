@@ -21,11 +21,11 @@ func main() {
 		return
 	}
 
-	requestUrl := "http://RESTServer/sayhello/world"
+	requestURL := "http://RESTServer/sayhello/world"
 
-	log.Print("requestUrl:", requestUrl)
+	log.Print("requestUrl:", requestURL)
 
-	req, err := rest.NewRequest("GET", requestUrl, nil)
+	req, err := rest.NewRequest("GET", requestURL, nil)
 	if err != nil {
 		lager.Logger.Error("new request failed.")
 		return

@@ -41,8 +41,9 @@ const (
 	MimeMult          = "multipart/form-data"
 )
 
+//暂无用
 const (
-	Meta_IsCheckIp = "IsCheckIp"
+	MetaIsCheckIP = "IsCheckIP"
 )
 
 func init() {
@@ -127,7 +128,7 @@ func (r *restfulServer) Register(schema interface{}, options ...server.RegisterO
 			return "", fmt.Errorf("router func can not find: %s", route.ResourceFuncName)
 		}
 
-		isCheckIp := route.IsCheckIp
+		isCheckIP := route.IsCheckIP
 		handler := func(req *restful.Request, rep *restful.Response) {
 			c, err := handler.GetChain(common.Provider, r.opts.ChainName) //放在此处是为了实现api级~~
 			if err != nil {
@@ -158,7 +159,7 @@ func (r *restfulServer) Register(schema interface{}, options ...server.RegisterO
 				ir.Status = bs.resp.StatusCode()
 
 				//验证ip
-				if isCheckIp {
+				if isCheckIP {
 					fmt.Println("checkip:", configObj)
 				}
 
