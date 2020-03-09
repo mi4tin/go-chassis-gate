@@ -1,4 +1,4 @@
-module go-chassis-gate
+module github.com/mi4tin/go-chassis-gate
 
 replace (
 	golang.org/x/crypto => github.com/golang/crypto v0.0.0-20181001203147-e3636079e1a4
@@ -16,6 +16,5 @@ require (
 	github.com/go-chassis/go-restful-swagger20 v1.0.2
 	github.com/go-mesh/openlogging v1.0.1
 	github.com/go-yaml/yaml v2.1.0+incompatible
-	github.com/mi4tin/go-chassis-gate v0.0.0-20190709093959-a7fe12e7711a
 	golang.org/x/sys v0.0.0-20191018095205-727590c5006e // indirect
 )
